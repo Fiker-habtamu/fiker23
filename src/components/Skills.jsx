@@ -22,7 +22,7 @@ function SkillBar({ label, icon }) {
         {label}
       </div>
       <div className="progress-bar-wrap">
-        <div className="progress-bar-fill" style={{ width: "90%" }} />
+        <div className="progress-bar-fill" style={{ width: "100%" }} />
       </div>
     </div>
   );
