@@ -61,7 +61,7 @@ export default function Skills() {
               "nodejs-logo.svg", "teamwork.png", "express.png", "api.png",
               "sql.png", "git.webp", "bootstrap.jpg",
             ].map((img, i) => (
-              <img key={i} src={`./assets/img/Skills/${img}`} alt="" />
+              <img key={i} src={`/src/assets/img/Skills/${img}`} alt="" />
             ))}
           </div>
         </div>

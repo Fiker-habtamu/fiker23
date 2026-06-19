@@ -3,28 +3,28 @@ const projects = [
     title: "Netflix Clone",
     description:
       "Built with React, fetching dynamic content from the TMDB API. Features smooth navigation, React Hooks, and Context API for efficient state management.",
-    img: "./assets/img/portfolio/Netflex.jpg",
+    img: "/src/assets/img/portfolio/Netflex.jpg",
     url: "https://fiker-netflex-1.netlify.app/",
   },
   {
     title: "Amazon Clone",
     description:
       "Full-stack clone using React and Node.js with a functional shopping cart, product listings, and seamless user interactions.",
-    img: "./assets/img/portfolio/Amazon.jpg",
+    img: "/src/assets/img/portfolio/Amazon.jpg",
     url: "https://amazon-fiker.vercel.app/",
   },
   {
     title: "Evangadi Forum",
     description:
       "A Q&A platform similar to Stack Overflow, built with React, Node.js, and JWT for secure authentication and session management.",
-    img: "./assets/img/portfolio/Forum.jpg",
+    img: "/src/assets/img/portfolio/Forum.jpg",
     url: "https://evangadi-forum-fiker.netlify.app/",
   },
   {
     title: "3D Animation Gallery",
     description:
       "A curated collection of 3D animation artworks showcasing detailed modeling, realistic textures, and creative visual storytelling.",
-    img: "./assets/img/portfolio/Fkrimg.png",
+    img: "/src/assets/img/portfolio/Fkrimg.png",
     url: "https://fkrimg.netlify.app/",
   },
 ];

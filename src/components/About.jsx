@@ -4,7 +4,7 @@ export default function About() {
       <div className="container">
         <div className="about-section">
           <div className="about-image">
-            <img src="assets/img/fkr.jpg" alt="Fiker Habtamu" />
+            <img src="/src/assets/img/myimg/fkr.jpg" alt="Fiker Habtamu" />
           </div>
           <div className="about-content">
             <h1>Hi, I'M FIKER</h1>

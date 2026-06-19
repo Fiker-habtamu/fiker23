@@ -25,7 +25,7 @@ export default function Header({ activeSection }) {
 
       <header className={`sidebar ${menuOpen ? "open" : ""}`}>
         <div className="profile">
-          <img src="../assets/img/fkr.jpg" alt="Fiker Habtamu" />
+          <img src="/src/assets/img/myimg/fkr.jpg" alt="Fiker Habtamu" />
           <h1>
             <a href="#hero" onClick={handleNavClick}>Fiker Habtamu</a>
           </h1>
