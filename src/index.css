@@ -200,6 +200,8 @@ section {
     linear-gradient(rgba(4, 11, 20, 0.3), rgba(4, 11, 20, 0.3)),
     url("./assets/img/homebg1.jpg")
       center/cover no-repeat;
+  background-attachment: fixed;
+  background-position:center;
   display: flex;
   align-items: center;
   justify-content: center;
