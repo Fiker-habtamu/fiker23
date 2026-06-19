@@ -3,9 +3,9 @@ export default function About() {
     <section id="about" className="about">
       <div className="container">
         <div className="about-section">
-          <div className="about-image">
+          {/* <div className="about-image">
             <img src="/src/assets/img/myimg/fkr.jpg" alt="Fiker Habtamu" />
-          </div>
+          </div> */}
           <div className="about-content">
             <h1>Hi, I'M FIKER</h1>
             <h3>FULL-STACK DEVELOPER</h3>
