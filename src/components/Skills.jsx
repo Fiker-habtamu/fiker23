@@ -28,9 +28,9 @@ function SkillBar({ label, icon }) {
   );
 }
 
-export default function Skills() {
+export default function Skills({targetSkillSectionRef}) {
   return (
-    <section id="skills" className="skills section-bg">
+    <section id="skills" className="skills section-bg" ref={targetSkillSectionRef}>
       <div className="container">
         <div className="section-title">
           <h2>Skills</h2>

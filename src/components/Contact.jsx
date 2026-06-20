@@ -16,9 +16,9 @@ const contactItems = [
   },
 ];
 
-export default function Contact() {
+export default function Contact({targetContactSectionRef}) {
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact" ref={targetContactSectionRef}>
       <div className="container">
         <div className="section-title">
           <h2>Contact</h2>

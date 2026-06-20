@@ -1,6 +1,6 @@
-export default function About() {
+export default function About({targetAboutSectionRef}) {
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" ref={targetAboutSectionRef}>
       <div className="container">
         <div className="about-section">
           {/* <div className="about-image">

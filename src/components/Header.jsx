@@ -1,17 +1,48 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const navLinks = [
-  { href: "#hero", label: "Home", icon: "bx bx-home" },
-  { href: "#about", label: "About", icon: "bx bx-user" },
-  { href: "#skills", label: "Skills", icon: "bx bx-file-blank" },
-  { href: "#portfolio", label: "Portfolio", icon: "bx bx-book-content" },
-  { href: "#contact", label: "Contact", icon: "bx bx-envelope" },
-];
+// const navLinks = [
+//   { href: "#hero", label: "Home", icon: "bx bx-home" },
+//   { href: "#project", label: "Featured Works", icon: "bx bx-briefcase-alt-2" },
+//   { href: "#about", label: "About", icon: "bx bx-user" },
+//   { href: "#skills", label: "Skills", icon: "bx bx-file-blank" },
+//   { href: "#portfolio", label: "Portfolio", icon: "bx bx-book-content" },
+//   { href: "#contact", label: "Contact", icon: "bx bx-envelope" },
+// ];
 
-export default function Header({ activeSection }) {
+export default function Header({
+  activeSection,
+  scrollToHeroSection,
+  scrollToProjectSection,
+  scrollToAboutSection,
+  scrollToSkillSection,
+  scrollToServiceSection,
+  scrollToContactSection,
+}) {
+  const navLinks = [
+    {href: "#hero", click: scrollToHeroSection, label: "Home", icon: "bx bx-home" },
+    {href: "#project",
+      click: scrollToProjectSection,
+      label: "Featured Works",
+      icon: "bx bx-briefcase-alt-2",
+    },
+    {href: "#about", click: scrollToAboutSection, label: "About", icon: "bx bx-user" },
+    {href: "#skills", click: scrollToSkillSection, label: "Skills", icon: "bx bx-file-blank" },
+    { href: "#portfolio", 
+      click: scrollToServiceSection,
+      label: "Portfolio",
+      icon: "bx bx-book-content",
+    },
+    {href: "#contact", click: scrollToContactSection, label: "Contact", icon: "bx bx-envelope" },
+  ];
+  console.log(scrollToHeroSection)
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavClick = () => setMenuOpen(false);
+
+  const bothFunctions = () => {
+    handleNavClick();
+  };
 
   return (
     <>
@@ -27,33 +58,48 @@ export default function Header({ activeSection }) {
         <div className="profile">
           <img src="/src/assets/img/myimg/fkr.jpg" alt="Fiker Habtamu" />
           <h1>
-            <a href="#hero" onClick={handleNavClick}>Fiker Habtamu</a>
+            <Link href="#hero" onClick={handleNavClick}>
+              Fiker Habtamu
+            </Link>
           </h1>
           <div className="social-links">
-            <a href="https://github.com/Fiker-habtamu" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://github.com/Fiker-habtamu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-github" />
-            </a>
-            <a href="https://www.instagram.com/fiker1699/" target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link
+              href="https://www.instagram.com/fiker1699/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-instagram" />
-            </a>
-            <a href="https://www.linkedin.com/in/fiker-habtamu-15aa992b4/" target="_blank" rel="noopener noreferrer">
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/fiker-habtamu-15aa992b4/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-linkedin" />
-            </a>
+            </Link>
           </div>
         </div>
 
         <nav className="nav-menu">
           <ul>
-            {navLinks.map(({ href, label, icon }) => (
+            {navLinks.map(({ href,click, label, icon }) => (
+              console.log("i am click",click),
               <li key={href}>
-                <a
-                  href={href}
+                <Link
+
                   className={activeSection === href.slice(1) ? "active" : ""}
-                  onClick={handleNavClick}
+                  onClick={click}
                 >
                   <i className={icon} />
                   <span>{label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

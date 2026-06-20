@@ -7,7 +7,7 @@ const roles = [
   "Back-end Developer",
 ];
 
-export default function Hero() {
+export default function Hero({targetHeroSectionRef}) {
   const [currentRole, setCurrentRole] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
@@ -39,7 +39,7 @@ export default function Hero() {
   }, [displayed, typing, currentRole]);
 
   return (
-    <section id="hero">
+    <section id="hero" ref={targetHeroSectionRef}>
       <div className="hero-container" data-aos="fade-in">
         <h1>Fiker Habtamu</h1>
         <p>
