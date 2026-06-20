@@ -35,13 +35,13 @@ export default function Header({
     },
     {href: "#contact", click: scrollToContactSection, label: "Contact", icon: "bx bx-envelope" },
   ];
-  console.log(scrollToHeroSection)
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavClick = () => setMenuOpen(false);
 
-  const bothFunctions = () => {
+  const bothFunctions = (justClick) => {
     handleNavClick();
+    console.log(justClick)
   };
 
   return (
@@ -58,7 +58,7 @@ export default function Header({
         <div className="profile">
           <img src="/src/assets/img/myimg/fkr.jpg" alt="Fiker Habtamu" />
           <h1>
-            <Link href="#hero" onClick={handleNavClick}>
+            <Link onClick={handleNavClick}>
               Fiker Habtamu
             </Link>
           </h1>
@@ -90,12 +90,11 @@ export default function Header({
         <nav className="nav-menu">
           <ul>
             {navLinks.map(({ href,click, label, icon }) => (
-              console.log("i am click",click),
               <li key={href}>
                 <Link
 
                   className={activeSection === href.slice(1) ? "active" : ""}
-                  onClick={click}
+                  onClick={()=>{handleNavClick();click()}}
                 >
                   <i className={icon} />
                   <span>{label}</span>
