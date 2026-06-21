@@ -39,11 +39,6 @@ export default function Header({
 
   const handleNavClick = () => setMenuOpen(false);
 
-  const bothFunctions = (justClick) => {
-    handleNavClick();
-    console.log(justClick)
-  };
-
   return (
     <>
       <button
