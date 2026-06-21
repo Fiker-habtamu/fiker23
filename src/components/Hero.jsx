@@ -46,6 +46,7 @@ export default function Hero({targetHeroSectionRef}) {
           Hi, I'm{" "}
           <span className="typed-text">{displayed}</span>
         </p>
+        <p>I build fast, responsive, and user-friendly websites that help businesses grow online.</p>
       </div>
     </section>
   );
