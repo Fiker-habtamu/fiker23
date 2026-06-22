@@ -41,9 +41,10 @@ export default function Hero({targetHeroSectionRef}) {
   return (
     <section id="hero" ref={targetHeroSectionRef}>
       <div className="hero-container" data-aos="fade-in">
-        <h1>Fiker Habtamu</h1>
+        <div className="text-left mb-0"><h1></h1></div>
+        <h1>HI, I'm Fiker</h1>
         <p>
-          Hi, I'm{" "}
+          I'm{" "}
           <span className="typed-text">{displayed}</span>
         </p>
       </div>
