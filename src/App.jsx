@@ -13,22 +13,7 @@ export default function App() {
   const targetSkillSectionRef = useRef(null);
   const targetContactSectionRef = useRef(null);
 
-  // useEffect(() => {
-  //   const sections = document.querySelectorAll("section[id]");
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           setActiveSection(entry.target.id);
-  //         }
-  //       });
-  //     },
-  //     { threshold: 0.4 },
-  //   );
-  //   sections.forEach((s) => observer.observe(s));
-  //   return () => observer.disconnect();
-  // }, []);
-
+  // scroll function
   const scrollToHeroSection = () =>
     targetHeroSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   const scrollToProjectSection = () =>
@@ -43,7 +28,6 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-
       <Routes>
         {/* Main Single Page View */}
 

@@ -26,6 +26,7 @@ export default function Home({
   targetSkillSectionRef,
   targetContactSectionRef,
 }) {
+  // Active section controller
   useEffect(() => {
     if (location.pathname !== "/") return;
 
