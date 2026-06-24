@@ -106,7 +106,7 @@ export default function App() {
       />
       <main>
         <Hero targetHeroSectionRef={targetHeroSectionRef}/>
-        <Featured/>
+        <Featured targetProjectSectionRef={targetProjectSectionRef}/>
         <About targetAboutSectionRef={targetAboutSectionRef}/>
         <Skills targetSkillSectionRef={targetSkillSectionRef}/>
         <Resume />

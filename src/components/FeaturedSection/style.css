@@ -1,8 +1,8 @@
- @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
-
+   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+ 
         *, *::before, *::after { box-sizing: border-box; }
         a { text-decoration: none; }
-
+ 
         @keyframes fp-fadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -11,7 +11,7 @@
           from { opacity: 0; transform: scale(1.06); }
           to   { opacity: 1; transform: scale(1); }
         }
-
+ 
         /* ── Section shell ── */
         .fp-section {
           position: relative;
@@ -24,7 +24,7 @@
           align-items: center;
           justify-content: center;
         }
-
+ 
         .fp-canvas {
           position: absolute;
           inset: 0;
@@ -32,7 +32,7 @@
           height: 100%;
           z-index: 0;
         }
-
+ 
         .fp-overlay {
           position: absolute;
           inset: 0;
@@ -43,7 +43,7 @@
           z-index: 1;
           pointer-events: none;
         }
-
+ 
         /* ── Content wrapper ── */
         .fp-content {
           position: relative;
@@ -54,10 +54,10 @@
           padding: 80px 32px;
           animation: fp-fadeUp 0.9s ease both;
         }
-
+ 
         /* ── Header ── */
         .fp-header { margin-bottom: 52px; }
-
+ 
         .fp-tagline {
           display: flex;
           align-items: center;
@@ -71,7 +71,7 @@
           letter-spacing: 4px;
           font-weight: 500;
         }
-
+ 
         .fp-title {
           font-size: clamp(2.2rem, 5vw, 3.8rem);
           font-weight: 700;
@@ -81,7 +81,7 @@
           letter-spacing: -0.02em;
         }
         .fp-accent { color: #149DDD; }
-
+ 
         .fp-subtitle {
           font-size: 15px;
           color: rgba(255,255,255,0.42);
@@ -90,7 +90,7 @@
           margin: 0;
           font-weight: 300;
         }
-
+ 
         /* ── Grid ── */
         .fp-grid {
           display: grid;
@@ -98,7 +98,7 @@
           gap: 14px;
           margin-bottom: 48px;
         }
-
+ 
         /* ── Card ── */
         .fp-card {
           position: relative;
@@ -114,7 +114,7 @@
             box-shadow 0.28s ease;
           background: #081724;
         }
-
+ 
         .fp-card--active,
         .fp-card:hover {
           border-color: rgba(20,157,221,0.55);
@@ -122,24 +122,24 @@
           box-shadow: 0 16px 48px rgba(20,157,221,0.14),
                       0 0 0 1px rgba(20,157,221,0.22);
         }
-
+ 
         /* Image layer */
         .fp-card-img {
           position: absolute;
           inset: 0;
           background-size: cover;
           background-position: center;
-          opacity: 0.18;
+          opacity: 0.58;
           transform: scale(1.04);
           transition: opacity 0.45s ease, transform 0.45s ease;
           z-index: 0;
         }
         .fp-card--active .fp-card-img,
         .fp-card:hover .fp-card-img {
-          opacity: 0.38;
+          opacity: 0.78;
           transform: scale(1.0);
         }
-
+ 
         /* Scrim: gradient from transparent top → dark bottom so text pops */
         .fp-card-scrim {
           position: absolute;
@@ -162,7 +162,7 @@
             rgba(4,11,20,0.92) 100%
           );
         }
-
+ 
         /* Scan lines */
         .fp-scanlines {
           position: absolute;
@@ -177,7 +177,7 @@
           pointer-events: none;
           z-index: 2;
         }
-
+ 
         /* Card body (text layer) */
         .fp-card-body {
           position: relative;
@@ -187,7 +187,7 @@
           flex: 1;
           padding: 22px 20px 20px;
         }
-
+ 
         .fp-card-top {
           display: flex;
           justify-content: space-between;
@@ -208,7 +208,7 @@
         }
         .fp-card--active .fp-card-dot,
         .fp-card:hover .fp-card-dot { opacity: 1; }
-
+ 
         .fp-card-label {
           font-size: 17px;
           font-weight: 600;
@@ -220,7 +220,7 @@
         }
         .fp-card--active .fp-card-label,
         .fp-card:hover .fp-card-label { color: #149DDD; }
-
+ 
         .fp-card-desc {
           font-size: 12px;
           color: rgba(255,255,255,0.38);
@@ -228,14 +228,14 @@
           margin: 0 0 auto;
           font-weight: 300;
         }
-
+ 
         .fp-card-arrow {
           margin-top: 20px;
           transition: transform 0.25s ease;
         }
         .fp-card--active .fp-card-arrow,
         .fp-card:hover .fp-card-arrow { transform: translateX(6px); }
-
+ 
         /* Bottom glow sweep */
         .fp-glow-line {
           position: absolute;
@@ -248,7 +248,7 @@
         }
         .fp-card--active .fp-glow-line,
         .fp-card:hover .fp-glow-line { opacity: 1; }
-
+ 
         /* Corner brackets */
         .fp-corner {
           position: absolute;
@@ -267,7 +267,7 @@
           border-bottom: 2px solid #149DDD;
           border-right: 2px solid #149DDD;
         }
-
+ 
         /* ── Footer ── */
         .fp-footer {
           display: flex;
@@ -289,9 +289,9 @@
           letter-spacing: 4px;
           white-space: nowrap;
         }
-
+ 
         /* ─────────────── RESPONSIVE ─────────────── */
-
+ 
         /* Tablet landscape: 2×2 */
         @media (max-width: 1024px) {
           .fp-grid {
@@ -299,7 +299,7 @@
           }
           .fp-card { min-height: 280px; }
         }
-
+ 
         /* Tablet portrait: keep 2 cols, tighten padding */
         @media (max-width: 768px) {
           .fp-content { padding: 60px 24px; }
@@ -310,7 +310,7 @@
           .fp-card-body { padding: 18px 16px 16px; }
           .fp-subtitle { font-size: 14px; }
         }
-
+ 
         /* Mobile: full-width single column stack */
         @media (max-width: 540px) {
           .fp-content { padding: 48px 16px; }
@@ -351,7 +351,7 @@
           .fp-card-arrow { margin-top: 12px; }
           .fp-footer-text { font-size: 8px; letter-spacing: 2px; }
         }
-
+ 
         /* Extra small phones */
         @media (max-width: 360px) {
           .fp-card-img { width: 70px; }

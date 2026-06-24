@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from 'three';
 import './style.css'
+import { Link } from "react-router-dom";
 
 const PROJECT_LINKS = [
   {
@@ -20,7 +21,7 @@ const PROJECT_LINKS = [
     description: "Pixel-perfect rebuilds of apps to master architecture.",
     href: "/projects/clone",
     // Unsplash – UI duplication / mirroring
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1572177812156-58036aae439c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageAlt: "Code editor on monitor",
   },
   {
@@ -30,7 +31,7 @@ const PROJECT_LINKS = [
     description: "Experiments and concept proofs built for learning.",
     href: "/projects/practice",
     // Unsplash – experiment / lab
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1685086785230-2233cf5d8f28?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageAlt: "Programming code on screen",
   },
   {
@@ -40,12 +41,12 @@ const PROJECT_LINKS = [
     description: "The complete archive — every build, every era.",
     href: "/projects/all",
     // Unsplash – archive / library feel
-    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2TjkxwbaN1UCuUezNQnlXNPRoNi-EZNjnZrgaSd6rg&s=10",
     imageAlt: "Developer workspace with multiple screens",
   },
 ];
 
-export default function Featured() {
+export default function Featured({targetProjectSectionRef}) {
   const canvasRef = useRef(null);
   const rendererRef = useRef(null);
   const frameRef = useRef(null);
@@ -202,7 +203,7 @@ export default function Featured() {
   }, []);
 
   return (
-    <section className="fp-section">
+    <section ref={targetProjectSectionRef} id="project" className="fp-section">
       <canvas ref={canvasRef} className="fp-canvas" />
       <div className="fp-overlay" />
 
@@ -225,7 +226,7 @@ export default function Featured() {
         {/* Cards */}
         <div className="fp-grid">
           {PROJECT_LINKS.map((link) => (
-            <a
+            <Link
               key={link.id}
               href={link.href}
               className={`fp-card${activeCard === link.id ? " fp-card--active" : ""}`}
@@ -264,7 +265,7 @@ export default function Featured() {
               <div className="fp-glow-line" />
               <div className="fp-corner fp-corner--tl" />
               <div className="fp-corner fp-corner--br" />
-            </a>
+            </Link>
           ))}
         </div>
 
