@@ -205,7 +205,7 @@ export default function Featured({targetProjectSectionRef}) {
   }, []);
 
   return (
-    <section ref={targetProjectSectionRef} id="project" className="fp-section">
+    <section  id="project"  ref={targetProjectSectionRef} className="fp-section">
       <canvas ref={canvasRef} className="fp-canvas" />
       <div className="fp-overlay" />
 
