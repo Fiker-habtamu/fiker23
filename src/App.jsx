@@ -9,6 +9,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./index.css";
 import { useRef } from "react";
+import FeaturedProjects from "./components/FeaturedSection/Featured";
+import Featured from "./components/FeaturedSection/Featured";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -104,6 +106,7 @@ export default function App() {
       />
       <main>
         <Hero targetHeroSectionRef={targetHeroSectionRef}/>
+        <Featured/>
         <About targetAboutSectionRef={targetAboutSectionRef}/>
         <Skills targetSkillSectionRef={targetSkillSectionRef}/>
         <Resume />
