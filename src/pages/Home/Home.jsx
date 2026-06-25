@@ -63,8 +63,6 @@ export default function Home({
         <Featured targetProjectSectionRef={targetProjectSectionRef} />
         <About targetAboutSectionRef={targetAboutSectionRef} />
         <Skills targetSkillSectionRef={targetSkillSectionRef} />
-        <Resume />
-        <Portfolio />
         <Contact targetContactSectionRef={targetContactSectionRef} />
       </main>
       <Footer />

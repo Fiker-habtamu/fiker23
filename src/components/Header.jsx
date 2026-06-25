@@ -36,12 +36,6 @@ export default function Header({
       icon: "bx bx-file-blank",
     },
     {
-      href: "#portfolio",
-      click: scrollToServiceSection,
-      label: "Portfolio",
-      icon: "bx bx-book-content",
-    },
-    {
       href: "#contact",
       click: scrollToContactSection,
       label: "Contact",
