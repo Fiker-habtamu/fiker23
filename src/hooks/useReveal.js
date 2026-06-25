@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function useReveal() {
+export default function useReveal(threshold = 0.2) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -9,11 +9,10 @@ export default function useReveal() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          observer.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.4,
-      }
+      { threshold }
     );
 
     if (ref.current) {
@@ -21,7 +20,7 @@ export default function useReveal() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [threshold]);
 
   return { ref, isVisible };
 }
