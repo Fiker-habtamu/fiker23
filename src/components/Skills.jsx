@@ -1,18 +1,21 @@
-const skillsLeft = [
-  { label: "HTML", icon: "fab fa-html5" },
-  { label: "CSS", icon: "fab fa-css3-alt" },
-  { label: "JavaScript", icon: "fab fa-js" },
-  { label: "API Integration", icon: null },
-  { label: "MySQL & MongoDB", icon: null },
-];
+// const skillsLeft = [
+//   { label: "HTML", icon: "fab fa-html5" },
+//   { label: "CSS", icon: "fab fa-css3-alt" },
+//   { label: "JavaScript", icon: "fab fa-js" },
+//   { label: "API Integration", icon: null },
+//   { label: "MySQL & MongoDB", icon: null },
+// ];
 
-const skillsRight = [
-  { label: "Bootstrap", icon: "fab fa-bootstrap" },
-  { label: "React", icon: "fab fa-react" },
-  { label: "UX/UI Design", icon: null },
-  { label: "Node.js & Express.js", icon: "fab fa-node" },
-  { label: "Teamwork", icon: null },
-];
+import { skillsLeft, skillsRight } from "../data/dataSet";
+import RotatedSkills from "./RotatedSkills/RotatedSkills";
+
+// const skillsRight = [
+//   { label: "Bootstrap", icon: "fab fa-bootstrap" },
+//   { label: "React", icon: "fab fa-react" },
+//   { label: "UX/UI Design", icon: null },
+//   { label: "Node.js & Express.js", icon: "fab fa-node" },
+//   { label: "Teamwork", icon: null },
+// ];
 
 function SkillBar({ label, icon }) {
   return (
@@ -33,7 +36,7 @@ export default function Skills({targetSkillSectionRef}) {
     <section id="skills" className="skills section-bg" ref={targetSkillSectionRef}>
       <div className="container">
         <div className="section-title">
-          <h2>Skills</h2>
+          <h2 className="text-[41px]">Skills</h2>
           <p>
             Proficient in HTML, CSS, and JavaScript for building responsive,
             accessible web interfaces. Experienced with React, Bootstrap, Node.js,
@@ -49,6 +52,10 @@ export default function Skills({targetSkillSectionRef}) {
             <SkillBar key={s.label} {...s} />
           ))}
         </div>
+
+        {/* rotated skills */}
+
+        <RotatedSkills/>
 
         {/* Tech logo marquee */}
         <div className="skills-marquee">

@@ -228,4 +228,20 @@ const CATEGORY_BADGE = {
   },
 };
 
-export { PROJECT_LINKS, ALL_PROJECTS, CATEGORY_META, CATEGORY_BADGE };
+// skill bar
+const skillsLeft = [
+  { label: "HTML", icon: "fab fa-html5" },
+  { label: "CSS", icon: "fab fa-css3-alt" },
+  { label: "JavaScript", icon: "fab fa-js" },
+  { label: "API Integration", icon: null },
+  { label: "MySQL & MongoDB", icon: null },
+];
+const skillsRight = [
+  { label: "Bootstrap", icon: "fab fa-bootstrap" },
+  { label: "React", icon: "fab fa-react" },
+  { label: "UX/UI Design", icon: null },
+  { label: "Node.js & Express.js", icon: "fab fa-node" },
+  { label: "Teamwork", icon: null },
+];
+
+export { PROJECT_LINKS, ALL_PROJECTS, CATEGORY_META, CATEGORY_BADGE,skillsLeft,skillsRight };
