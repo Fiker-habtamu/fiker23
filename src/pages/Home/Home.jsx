@@ -11,7 +11,6 @@ import Footer from "../../components/Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-
 export default function Home({
   activeSection,
   setActiveSection,

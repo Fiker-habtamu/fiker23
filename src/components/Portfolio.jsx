@@ -1,3 +1,5 @@
+import useReveal from "../hooks/useReveal";
+
 const projects = [
   {
     title: "Netflix Clone",
@@ -30,19 +32,25 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const { ref, isVisible } = useReveal();
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container">
         <div className="section-title">
           <h2>Portfolio</h2>
           <p>
-            A series of clone projects replicating popular platforms — demonstrating
-            my ability to integrate complex features while following best practices
-            in both front-end and back-end development.
+            A series of clone projects replicating popular platforms —
+            demonstrating my ability to integrate complex features while
+            following best practices in both front-end and back-end development.
           </p>
         </div>
 
-        <div className="projects-grid">
+        <div
+          ref={ref}
+          className={`projects-grid transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-x-10"
+          }`}
+        >
           {projects.map((p) => (
             <a
               key={p.title}

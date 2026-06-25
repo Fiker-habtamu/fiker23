@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import * as THREE from 'three';
-import './style.css'
+import * as THREE from "three";
+import "./style.css";
 import { Link } from "react-router-dom";
-import {PROJECT_LINKS} from '../../data/dataSet'
+import { PROJECT_LINKS } from "../../data/dataSet";
+import useReveal from "../../hooks/useReveal";
 
-export default function Featured({targetProjectSectionRef}) {
+export default function Featured({ targetProjectSectionRef }) {
+  const { ref: revealRef, isVisible } = useReveal();
   const canvasRef = useRef(null);
   const rendererRef = useRef(null);
   const frameRef = useRef(null);
@@ -19,7 +21,7 @@ export default function Featured({targetProjectSectionRef}) {
       60,
       canvasRef.current.clientWidth / canvasRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 80;
 
@@ -29,7 +31,10 @@ export default function Featured({targetProjectSectionRef}) {
       antialias: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(canvasRef.current.clientWidth, canvasRef.current.clientHeight);
+    renderer.setSize(
+      canvasRef.current.clientWidth,
+      canvasRef.current.clientHeight,
+    );
     rendererRef.current = renderer;
 
     const count = 1800;
@@ -114,8 +119,20 @@ export default function Featured({targetProjectSectionRef}) {
       const z = (i / 12) * 60 - 30;
       linePositions.push(-90, -50, z, 90, -50, z);
     }
-    gridGeom.setAttribute("position", new THREE.BufferAttribute(new Float32Array(linePositions), 3));
-    scene.add(new THREE.LineSegments(gridGeom, new THREE.LineBasicMaterial({ color: "#149DDD", transparent: true, opacity: 0.06 })));
+    gridGeom.setAttribute(
+      "position",
+      new THREE.BufferAttribute(new Float32Array(linePositions), 3),
+    );
+    scene.add(
+      new THREE.LineSegments(
+        gridGeom,
+        new THREE.LineBasicMaterial({
+          color: "#149DDD",
+          transparent: true,
+          opacity: 0.06,
+        }),
+      ),
+    );
 
     const handleResize = () => {
       if (!canvasRef.current) return;
@@ -142,7 +159,10 @@ export default function Featured({targetProjectSectionRef}) {
       frameRef.current = requestAnimationFrame(animate);
       const t = clock.getElapsedTime();
       material.uniforms.uTime.value = t;
-      material.uniforms.uMouse.value.set(mouseRef.current.x, mouseRef.current.y);
+      material.uniforms.uMouse.value.set(
+        mouseRef.current.x,
+        mouseRef.current.y,
+      );
       particles.rotation.y = t * 0.015;
       particles.rotation.x = Math.sin(t * 0.1) * 0.05;
       camera.position.x = Math.sin(t * 0.08) * 4;
@@ -161,13 +181,24 @@ export default function Featured({targetProjectSectionRef}) {
   }, []);
 
   return (
-    <section  id="project"  ref={targetProjectSectionRef} className="fp-section">
+    <section
+      id="project"
+      ref={targetProjectSectionRef}
+      // ref={revealRef}
+      // ref={(element) => {
+      //   if (element) {
+      //     targetProjectSectionRef.current = element;
+      //     revealRef.current = element;
+      //   }
+      // }}
+      className={`fp-section`}
+    >
       <canvas ref={canvasRef} className="fp-canvas" />
       <div className="fp-overlay" />
 
-      <div className="fp-content">
+      <div className={`fp-content`}>
         {/* Header */}
-        <div className="fp-header">
+        <div className="fp-header ">
           <div className="fp-tagline">
             <span className="fp-dash">—</span>
             <span className="fp-tagline-text">PORTFOLIO</span>
@@ -182,7 +213,14 @@ export default function Featured({targetProjectSectionRef}) {
         </div>
 
         {/* Cards */}
-        <div className="fp-grid">
+        <div
+          className={`fp-grid transition-all duration-1000 ${
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-x-10"
+          }`}
+          ref={revealRef}
+        >
           {PROJECT_LINKS.map((link) => (
             <Link
               key={link.id}
@@ -212,8 +250,16 @@ export default function Featured({targetProjectSectionRef}) {
                 <h3 className="fp-card-label">{link.label}</h3>
                 <p className="fp-card-desc">{link.description}</p>
                 <div className="fp-card-arrow">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="#149DDD" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#149DDD"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
