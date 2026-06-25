@@ -244,4 +244,22 @@ const skillsRight = [
   { label: "Teamwork", icon: null },
 ];
 
-export { PROJECT_LINKS, ALL_PROJECTS, CATEGORY_META, CATEGORY_BADGE,skillsLeft,skillsRight };
+// Services
+const NINE_SERVICES = [
+  // --- SET 1 ---
+  { id: "01", title: "Web Development", desc: "Crafting highly responsive, pixel-perfect frontend architectures using modern web standards." },
+  { id: "02", title: "Full-Stack Applications", desc: "Engineering scalable web apps from secure database design to intuitive user interfaces." },
+  { id: "03", title: "UI/UX Implementation", desc: "Translating sophisticated designer prototypes into living interactive web experiences." },
+  
+  // --- SET 2 ---
+  { id: "04", title: "API Integration & Design", desc: "Building clean, optimized RESTful or GraphQL communication pipelines and secure web services." },
+  { id: "05", title: "Performance Optimization", desc: "Auditing application load lifecycles to reduce bundle sizes and achieve instant render speeds." },
+  { id: "06", title: "Database Architecture", desc: "Designing high-throughput relational and non-relational storage layers with optimized query patterns." },
+  
+  // --- SET 3 ---
+  { id: "07", title: "📱 Responsive Design", desc: "Ensure websites work seamlessly across desktops, tablets, and mobile devices." },
+  { id: "08", title: "E-Commerce Development", desc: "Constructing robust shopping engines with secure payment gateways, cart states, and stock tracking." },
+  { id: "09", title: "Custom Software Solutions", desc: "Developing tailored algorithmic scripts and custom automation tools built for specific business requirements." }
+];
+
+export { PROJECT_LINKS, ALL_PROJECTS, CATEGORY_META, CATEGORY_BADGE,skillsLeft,skillsRight,NINE_SERVICES };

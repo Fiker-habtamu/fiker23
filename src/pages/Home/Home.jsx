@@ -4,12 +4,11 @@ import Hero from "../../components/Hero";
 import Featured from "../../components/FeaturedSection/Featured";
 import About from "../../components/About";
 import Skills from "../../components/Skills";
-import Resume from "../../components/Resume";
-import Portfolio from "../../components/Portfolio";
 import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Service from "../../components/ServiceSection/Service";
 
 export default function Home({
   activeSection,
@@ -63,6 +62,7 @@ export default function Home({
         <Featured targetProjectSectionRef={targetProjectSectionRef} />
         <About targetAboutSectionRef={targetAboutSectionRef} />
         <Skills targetSkillSectionRef={targetSkillSectionRef} />
+        <Service/>
         <Contact targetContactSectionRef={targetContactSectionRef} />
       </main>
       <Footer />

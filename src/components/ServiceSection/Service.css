@@ -1,0 +1,171 @@
+  .srv-track-height {
+          position: relative;
+          height: 300vh;
+        }
+
+        .srv-sticky-window {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          width: 100%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /* Smoothly blend background updates when swapping sets */
+          transition: background-color 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .srv-glow-sphere {
+          position: absolute;
+          width: 600px;
+          height: 600px;
+          background: radial-gradient(circle, rgba(20, 157, 221, 0.12) 0%, transparent 70%);
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          pointer-events: none;
+          /* Smooth position shifts when scrolling transitions activate */
+          transition: top 0.8s cubic-bezier(0.25, 1, 0.5, 1), left 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .srv-digital-grid {
+          position: absolute;
+          inset: 0;
+          background-image: linear-gradient(rgba(255,255,255,0.008) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255,255,255,0.008) 1px, transparent 1px);
+          background-size: 50px 50px;
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        .srv-content-bound {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          max-width: 1200px;
+          padding: 0 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .srv-center-header {
+          text-align: center;
+          margin-bottom: 40px;
+        }
+
+        .srv-main-title {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: clamp(2.5rem, 5vw, 4rem);
+          font-weight: 800;
+          color: #fff;
+          margin: 0 0 10px;
+          letter-spacing: -1px;
+        }
+
+        .srv-blue-highlight {
+          color: #149ddd;
+        }
+
+        .srv-subtitle {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 0;
+          font-weight: 400;
+        }
+
+        .srv-triad-display {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+          width: 100%;
+          min-height: 220px;
+        }
+
+        .srv-vector-node {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          /* Quick subtle fade-in when layout swaps data nodes */
+          animation: srvFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes srvFadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .srv-node-icon-wrapper {
+          position: relative;
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .srv-circuit-dot {
+          width: 12px;
+          height: 12px;
+          background: #149ddd;
+          border-radius: 50%;
+          box-shadow: 0 0 15px #149ddd;
+        }
+
+        .srv-node-number {
+          position: absolute;
+          top: -20px;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 11px;
+          color: rgba(20, 157, 221, 0.4);
+          letter-spacing: 1px;
+        }
+
+        .srv-node-title {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 22px;
+          font-weight: 600;
+          color: #fff;
+          margin: 0 0 14px;
+        }
+
+        .srv-node-desc {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 0.5);
+          line-height: 1.6;
+          max-width: 300px;
+          margin: 0;
+        }
+
+        .srv-step-navigation {
+          display: flex;
+          gap: 12px;
+          margin-top: 80px;
+        }
+
+        .srv-dot {
+          width: 6px;
+          height: 6px;
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: 50%;
+          transition: background 0.3s, transform 0.3s;
+        }
+
+        .srv-dot.active {
+          background: #149ddd;
+          transform: scale(1.4);
+          box-shadow: 0 0 8px #149ddd;
+        }
+
+        @media (max-width: 768px) {
+          .srv-triad-display {
+            grid-template-columns: 1fr;
+            gap: 45px;
+          }
+          .srv-sticky-window { height: auto; padding: 100px 0; }
+          .srv-track-height { height: auto; }
+          .srv-center-header { margin-bottom: 40px; }
+          .srv-step-navigation { margin-top: 40px; }
+        }
