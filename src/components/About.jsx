@@ -1,17 +1,20 @@
+import useReveal from "../hooks/useReveal";
+
 export default function About({ targetAboutSectionRef }) {
+  const { ref: revealRef, isVisible } = useReveal(0.3);
   return (
     <section
       id="about"
       className="about about-section"
       ref={targetAboutSectionRef}
     >
-      <div className="container  about-content ">
+      <div className="container about-content">
         {/* Section Header */}
         <div className=" text-center">
           <h2 className="text-[41px] font-black">
             About{" "}
             <span className="text-[#149ddd] underline underline-offset-8">
-              Us
+              Me
             </span>
           </h2>
           <p className="text-2xl font-light">
@@ -21,7 +24,11 @@ export default function About({ targetAboutSectionRef }) {
         </div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div ref={revealRef} className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-start transition-all duration-1000 ${
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}>
           {/* Left Column — Info Cards */}
           <div className="flex flex-col gap-5">
             {/* Card 1 */}
