@@ -141,9 +141,11 @@ main {
 
 /* ===== SECTIONS ===== */
 section {
-  padding: 60px 0;
+  padding-top: 60px;
   overflow: hidden;
+  padding-bottom: 30px;
 }
+
 
 .section-bg {
   background: var(--color-section-bg);
@@ -230,46 +232,29 @@ section {
 
 /* ===== ABOUT ===== */
 .about-section {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  padding: 40px 0;
+  color: var(--color-text);
 }
 
-.about-image {
-  flex-shrink: 0;
-}
-
-.about-image img {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 8px solid #e8f4ff;
-  box-shadow: 0 20px 60px rgba(20, 157, 221, 0.2);
-}
-
-.about-content h1 {
-  font-size: 2.5rem;
+/* .about-content h2 {
+  text-align: center;
   font-weight: 800;
   font-family: var(--font-display);
-  color: #173b6c;
+  color: var(--color-text);
   letter-spacing: 2px;
-}
+} */
 
 .about-content h3 {
-  font-size: 1.1rem;
   color: var(--color-accent);
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   letter-spacing: 1px;
 }
 
 .about-content p {
-  color: #555;
+  /* color: var(--color-text-muted); */
+  padding: 10px;
   line-height: 1.8;
   margin-bottom: 28px;
-  font-size: 0.95rem;
 }
 
 .btn-box {
