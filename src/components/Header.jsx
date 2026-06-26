@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import profileImg from "../../assets/img/myimg/fkr.jpg";
+import profileImg from "../assets/img/myimg/fkr.jpg";
 
 
 export default function Header({

@@ -2,6 +2,20 @@ import { skillsLeft, skillsRight } from "../data/dataSet";
 import useReveal from "../hooks/useReveal";
 import RotatedSkills from "./RotatedSkills/RotatedSkills";
 
+// 1. Import all image variables cleanly from your assets path
+import img1 from "../assets/img/Skills/html.png";
+import img2 from "../assets/img/Skills/images.png";
+import img3 from "../assets/img/Skills/js.png";
+import img4 from "../assets/img/Skills/jquery.png";
+import img5 from "../assets/img/Skills/react.png";
+import img6 from "../assets/img/Skills/teamwork.png";
+import img7 from "../assets/img/Skills/nodejs-logo.svg";
+import img8 from "../assets/img/Skills/express.png";
+import img9 from "../assets/img/Skills/api.png";
+import img10 from "../assets/img/Skills/sql.png";
+import img_11 from "../assets/img/Skills/git.webp";
+import img_12 from "../assets/img/Skills/bootstrap.jpg";
+
 function SkillBar({ label, icon }) {
   return (
     <div className="skill-item">
@@ -50,40 +64,18 @@ export default function Skills({ targetSkillSectionRef }) {
         </div>
 
         {/* rotated skills */}
-
         <RotatedSkills />
 
         {/* Tech logo marquee */}
         <div className="skills-marquee">
           <div className="skills-track">
+            {/* 2. Map through the verified variables array instead of raw strings */}
             {[
-              "html.png",
-              "images.png",
-              "js.png",
-              "jquery.png",
-              "react.png",
-              "nodejs-logo.svg",
-              "teamwork.png",
-              "express.png",
-              "api.png",
-              "sql.png",
-              "git.webp",
-              "bootstrap.jpg",
+              img1, img2, img3, img4, img5, img7, img6, img8, img9, img10, img_11, img_12,
               /* duplicate for seamless loop */
-              "html.png",
-              "images.png",
-              "js.png",
-              "jquery.png",
-              "react.png",
-              "nodejs-logo.svg",
-              "teamwork.png",
-              "express.png",
-              "api.png",
-              "sql.png",
-              "git.webp",
-              "bootstrap.jpg",
-            ].map((img, i) => (
-              <img key={i} src={`../assets/img/Skills/${img}`} alt="" />
+              img1, img2, img3, img4, img5, img7, img6, img8, img9, img10, img_11, img_12
+            ].map((imgVar, i) => (
+              <img key={i} src={imgVar} alt="" />
             ))}
           </div>
         </div>
