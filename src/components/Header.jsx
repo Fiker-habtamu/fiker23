@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import profileImg from "../../assets/img/myimg/fkr.jpg";
+
 
 export default function Header({
   activeSection,
@@ -57,7 +59,7 @@ export default function Header({
   return (
     <header className="sidebar">
       <div className="profile">
-        <img src="/src/assets/img/myimg/fkr.jpg" alt="Fiker Habtamu" />
+        <img src={profileImg} alt="Fiker Habtamu" />
         <h1>
           <Link to="/" onClick={handleNavClick}>
             Fiker Habtamu
