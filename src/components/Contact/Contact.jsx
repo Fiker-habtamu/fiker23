@@ -2,10 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import "./Contact.css";
 import useReveal from "../../hooks/useReveal";
 
+
 export default function Contact({ targetContactSectionRef }) {
+  const web3Api = import.meta.env.WEB3FORM;
+
   const [isIntersecting, setIsIntersecting] = useState(false);
   const sectionRef = useRef(null);
   const { ref: revealRef, isVisible } = useReveal(0.3);
+  const [result, setResult] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,9 +30,28 @@ export default function Contact({ targetContactSectionRef }) {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     // Handle form submission analytics or API integration here
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    // INSERT YOUR ACCESS KEY HERE
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Message Sent Successfully!");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
 
   return (
@@ -69,11 +92,14 @@ export default function Contact({ targetContactSectionRef }) {
             production-ready software? Let's connect.
           </p>
 
-          <div className={`cnt-info-stack transition-all duration-1000 ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-x-10"
-          }`} ref={revealRef}>
+          <div
+            className={`cnt-info-stack transition-all duration-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-x-10"
+            }`}
+            ref={revealRef}
+          >
             {/* Email Card */}
             <a href="danathabtamu@gmail.com" className="cnt-info-card">
               <div className="cnt-card-icon-box">
@@ -230,6 +256,7 @@ export default function Contact({ targetContactSectionRef }) {
               <input
                 type="text"
                 id="name"
+                name="name"
                 required
                 placeholder=" "
                 className="cnt-form-input"
@@ -241,6 +268,7 @@ export default function Contact({ targetContactSectionRef }) {
 
             <div className="cnt-input-group">
               <input
+                name="email"
                 type="email"
                 id="email"
                 required
@@ -254,6 +282,7 @@ export default function Contact({ targetContactSectionRef }) {
 
             <div className="cnt-input-group">
               <textarea
+                name="message"
                 id="message"
                 required
                 rows="6"
@@ -268,6 +297,11 @@ export default function Contact({ targetContactSectionRef }) {
             <button type="submit" className="cnt-submit-btn">
               Submit
             </button>
+            {result && (
+              <p className="text-center text-xs text-green-400 pt-2 font-medium animate-fade-in">
+                {result}
+              </p>
+            )}
           </form>
         </div>
       </div>
