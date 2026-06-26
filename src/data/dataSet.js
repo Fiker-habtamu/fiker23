@@ -1,3 +1,17 @@
+// 1. Import all project layout images from your relative portfolio directory path
+import cafeImg from "../assets/img/portfolio/cafe.png";
+import portfolioImg from "../assets/img/portfolio/portfolio.png";
+import cruiseImg from "../assets/img/portfolio/cruise.png";
+import forumImg from "../assets/img/portfolio/Forum.jpg";
+import appleImg from "../assets/img/portfolio/Apple.jpg";
+import amazonImg from "../assets/img/portfolio/Amazon.jpg";
+import netflixImg from "../assets/img/portfolio/Netflex.jpg";
+import todolistImg from "../assets/img/portfolio/todolist.png";
+import weatherImg from "../assets/img/portfolio/weather.png";
+import calculatorImg from "../assets/img/portfolio/calculator.png";
+import fkrimgImg from "../assets/img/portfolio/Fkrimg.png";
+import profilecardImg from "../assets/img/portfolio/profilecard.png";
+
 // To handel projects section card
 const PROJECT_LINKS = [
   {
@@ -50,8 +64,8 @@ const ALL_PROJECTS = [
     category: "real",
     title: "Bistro & Coffee Shop Digital Menu",
     description:
-      " A highly visual web solution designed for the hospitality industry, transforming standard restaurant menus into an interactive online experience. Prioritizes user-centric navigation, crisp graphics, and aesthetic styling to align with modern brand identity.",
-    image: "/src/assets/img/portfolio/cafe.png",
+      "A highly visual web solution designed for the hospitality industry, transforming standard restaurant menus into an interactive online experience. Prioritizes user-centric navigation, crisp graphics, and aesthetic styling to align with modern brand identity.",
+    image: cafeImg, // <-- Use the imported variable name here instead of the string path
     stack: ["Basic front-end: HTML,CSS JavaScript", "React", "Tailwind"],
     github: "https://github.com/Fiker-habtamu/cafe",
     live: "https://fkr-cafe.netlify.app/",
@@ -62,7 +76,7 @@ const ALL_PROJECTS = [
     title: "Digital Professional Showcase",
     description:
       "A robust academic management tool utilizing complex 2D array implementations and structures for automated student grading and metrics.",
-    image: "/src/assets/img/portfolio/portfolio.png",
+    image: portfolioImg, // <-- Variable assigned
     stack: [
       "Basic front-end: HTML,CSS JavaScript",
       "React",
@@ -78,7 +92,7 @@ const ALL_PROJECTS = [
     title: "Cruise Steps Portal",
     description:
       "A responsive academic landing page designed to streamline institutional communications. Features an integrated notice board for real-time announcements, structured scheduling tables, and accessible information architectures optimized for prospective parents and students.",
-    image: "/src/assets/img/portfolio/cruise.png",
+    image: cruiseImg, // <-- Variable assigned
     stack: ["Basic front-end: HTML,CSS JavaScript"],
     github: "https://github.com/Fiker-habtamu/cruise-portal",
     live: "https://cruise-steps-protal-webapp.netlify.app/",
@@ -89,20 +103,19 @@ const ALL_PROJECTS = [
     title: "Evangadi Developer Q&A Forum",
     description:
       "A full-stack, secure discussion platform engineered with React, Node.js, Express, and SQL. Implements strict JWT user authentication to restrict forum access, enabling verified users to post technical questions, browse answers, and share insights within a relational database architecture.",
-    image: "/src/assets/img/portfolio/Forum.jpg",
+    image: forumImg, // <-- Variable assigned
     stack: ["React", "Node", "Express", "Sql"],
     github: "https://github.com/Fiker-habtamu/Evangadi-forum-client",
     live: "https://evangadi-forum-fiker.netlify.app/",
   },
   // ── CLONE ──
-
   {
     id: 5,
     category: "clone",
     title: "Apple Homepage Responsive Replica",
     description:
       "A front-end development project built to master advanced CSS layouts, semantic HTML architectures, and modern UI structures. Replicates Apple's signature sleek aesthetic with optimized media queries for flawless device responsiveness and high-resolution asset delivery.",
-    image: "/src/assets/img/portfolio/Apple.jpg",
+    image: appleImg, // <-- Variable assigned
     stack: ["React", "Api", "Tailwind CSS", "REACT STATE"],
     github: "https://github.com/Fiker-habtamu/Apple-clone",
     live: "https://fkr-iphone.vercel.app/",
@@ -113,80 +126,74 @@ const ALL_PROJECTS = [
     title: "E-Commerce Platform & Checkout Clone",
     description:
       "A full-stack replica of a major e-commerce marketplace featuring comprehensive user shopping experiences. Integrated a dynamic product catalog, fully functional persistent shopping cart calculations, secure payment simulations, and dedicated user order history archives.",
-    image: "/src/assets/img/portfolio/Amazon.jpg",
+    image: amazonImg, // <-- Variable assigned
     stack: ["React ", "Node.js", "Express", "Firebase / Stripe API"],
     github: "https://github.com/Fiker-habtamu/Amazon-front-end",
     live: "https://fkr-ecommerce-showcase.netlify.app/",
   },
-   {
+  {
     id: 7,
     category: "clone",
     title: "Netflix Stream Interface & Movie Database",
     description:
       "A dynamic movie discovery platform replicating the premium Netflix streaming interface. Integrates asynchronous REST API calls to fetch live media assets, structures categorised horizontal scroll rows, and implements interactive embedded video trailer playback functionality.",
-    image:
-      "/src/assets/img/portfolio/Netflex.jpg",
+    image: netflixImg, // <-- Variable assigned
     stack: ["React ", "TMDB API", "Axios", "React-Youtube"],
     github: "https://github.com/Fiker-habtamu/Netflix-clone",
     live: "https://fiker-netflex-1.netlify.app/",
   },
   // ── PRACTICE ──
- {
+  {
     id: 8,
     category: "practice",
     title: "Task Planner & Dynamic To-Do App",
     description:
       "A lightweight frontend productivity web application built to practice client-side state manipulation. Focuses on intuitive user interactions, dynamic DOM rendering, multi-list creation parameters, and custom categorization structures without database overhead.",
-    image:
-      "/src/assets/img/portfolio/todolist.png",
+    image: todolistImg, // <-- Variable assigned
     stack: ["Tailwind ", "JavaScript (ES6+)", "Responsive"],
     github: "https://github.com/Fiker-habtamu/To-do-list",
     live: "https://fkr-to-do-list.netlify.app/",
   },
-   {
+  {
     id: 9,
     category: "practice",
     title: "Hyperlocal Geolocation Weather Application",
     description:
       "A privacy-focused, zero-input weather dashboard that uses the native browser Geolocation API to automatically fetch real-time atmospheric conditions. Connects coordinate payloads to a third-party weather API, instantaneously serving local temperature metrics, humidity indexes, and local environmental data without manual search bars.",
-    image:
-      "/src/assets/img/portfolio/weather.png",
+    image: weatherImg, // <-- Variable assigned
     stack: ["React ","Tailwind ", "Browser Geolocation API ", "OpenWeather API"],
     github: "https://github.com/Fiker-habtamu/weather_web_app",
     live: "https://fkr-weather-app.netlify.app/",
   },
-    {
+  {
     id: 10,
     category: "practice",
     title: "Responsive Neomorphic Digital Calculator",
     description:
       "A sleek, mobile-first calculation interface focusing on high-fidelity visual styling, responsive grid structures, and interactive press states. Optimizes mathematical layouts across various device sizes while utilizing standard keyboard event listener arrays for desktop browsing",
-    image:
-      "/src/assets/img/portfolio/calculator.png",
+    image: calculatorImg, // <-- Variable assigned
     stack: ["Tailwind ", "JavaScript (ES6)", "Semantic UI"],
     github: "https://github.com/Fiker-habtamu/my-calculator",
     live: "https://fkr-calculator.netlify.app/",
   },
-      {
+  {
     id: 11,
     category: "practice",
     title: "3D Rotational Vanilla JS Image Gallery",
     description:
       "A high-performance image showcase built entirely without external frameworks to master direct DOM manipulation. Utilizes advanced CSS 3D transforms, perspective styling rules, and JavaScript interval matrices to create an autonomous 360-degree carousel animation loop.",
-    image:
-      "/src/assets/img/portfolio/Fkrimg.png",
+    image: fkrimgImg, // <-- Variable assigned
     stack: ["CSS 3D Transforms ", "JavaScript (ES6)", "Semantic UI"],
     github: "https://github.com/Fiker-habtamu/CodeAlpha_IMAGE_GALLERY",
     live: "https://fkrimg.netlify.app/",
   },
-        {
+  {
     id: 12,
     category: "practice",
     title: "Interactive Profile Showcase Card",
     description:
       "A polished UI component project focusing on crisp typography layouts, container clipping metrics, and complex micro-interactions. Features smooth hover-state scaling, isolated transition keyframes, and absolute positioning layers to deliver a modern, resume-style social presentation card.",
-    image:
-      "/src/assets/img/portfolio/profilecard.png",
+    image: profilecardImg, // <-- Variable assigned
     stack: ["HTML5 ", "Flexbox Layouts", "Tailwind CSS"],
     github: "https://github.com/Fiker-habtamu/Tailwind_profile_card",
     live: "https://fkr-profilecard-tailwind.netlify.app/",
