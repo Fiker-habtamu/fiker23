@@ -250,7 +250,12 @@ export default function Contact({ targetContactSectionRef }) {
         </div>
 
         {/* RIGHT COLUMN: HIGH-END DIGITAL CONTACT FORM */}
-        <div className="cnt-right-pane">
+        
+        <div className={`cnt-right-pane transition-all duration-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}  ref={revealRef}>
           <form onSubmit={handleSubmit} className="cnt-form-box">
             <div className="cnt-input-group">
               <input
