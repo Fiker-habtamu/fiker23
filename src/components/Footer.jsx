@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Footer() {
+export default function Footer({scrollToHeroSection,scrollToAboutSection,scrollToProjectSection}) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -28,13 +29,16 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Navigation</h4>
             <ul className="space-y-2 text-sm text-zinc-500">
               <li>
-                <a href="#hero" className="hover:text-white transition-colors duration-200">Home</a>
+                <Link to='/'
+                onClick={scrollToHeroSection} className="hover:text-white transition-colors duration-200 cursor-pointer">Home</Link>
               </li>
               <li>
-                <a href="#project" className="hover:text-white transition-colors duration-200">Projects</a>
+                <Link to='/'
+                onClick={scrollToProjectSection} className="hover:text-white transition-colors duration-200 cursor-pointer">Projects</Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors duration-200">About</a>
+                <Link to='/' onClick={scrollToAboutSection}
+                className="hover:text-white transition-colors duration-200 cursor-pointer">About</Link>
               </li>
             </ul>
           </div>

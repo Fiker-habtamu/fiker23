@@ -55,7 +55,7 @@ export default function App() {
         {/* Separate Sub-Pages for specific architectural branches */}
         <Route path="/projects/:category" element={<EachProjects />} />
       </Routes>
-      <Footer />
+    <Footer scrollToHeroSection={scrollToHeroSection} scrollToAboutSection={scrollToAboutSection} scrollToProjectSection={scrollToProjectSection}/>
     </>
   );
 }
