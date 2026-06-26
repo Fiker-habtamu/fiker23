@@ -9,6 +9,7 @@ export default function Header({
   scrollToSkillSection,
   scrollToServiceSection,
   scrollToContactSection,
+
 }) {
   const navLinks = [
     {
@@ -34,6 +35,12 @@ export default function Header({
       click: scrollToSkillSection,
       label: "Skills",
       icon: "bx bx-file-blank",
+    },
+    {
+      href: "#services",
+      click: scrollToServiceSection,
+      label: "Services",
+      icon: "bx bx-cog",
     },
     {
       href: "#contact",

@@ -16,11 +16,13 @@ export default function Home({
   scrollToProjectSection,
   scrollToAboutSection,
   scrollToSkillSection,
+  scrollToServiceSection,
   scrollToContactSection,
   targetHeroSectionRef,
   targetProjectSectionRef,
   targetAboutSectionRef,
   targetSkillSectionRef,
+  targetServiceSectionRef,
   targetContactSectionRef,
 }) {
   // Active section controller
@@ -54,6 +56,7 @@ export default function Home({
         scrollToProjectSection={scrollToProjectSection}
         scrollToAboutSection={scrollToAboutSection}
         scrollToSkillSection={scrollToSkillSection}
+        scrollToServiceSection={scrollToServiceSection}
         scrollToContactSection={scrollToContactSection}
       />
       <main>
@@ -61,7 +64,7 @@ export default function Home({
         <Featured targetProjectSectionRef={targetProjectSectionRef} />
         <About targetAboutSectionRef={targetAboutSectionRef} />
         <Skills targetSkillSectionRef={targetSkillSectionRef} />
-        <Service/>
+        <Service targetServiceSectionRef={targetServiceSectionRef} />
         <Contact targetContactSectionRef={targetContactSectionRef} />
       </main>
     </>

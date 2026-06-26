@@ -12,6 +12,7 @@ export default function App() {
   const targetProjectSectionRef = useRef(null);
   const targetAboutSectionRef = useRef(null);
   const targetSkillSectionRef = useRef(null);
+  const targetServiceSectionRef = useRef(null);
   const targetContactSectionRef = useRef(null);
 
   // scroll function
@@ -23,6 +24,8 @@ export default function App() {
     targetAboutSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   const scrollToSkillSection = () =>
     targetSkillSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToServiceSection = () =>
+    targetServiceSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   const scrollToContactSection = () =>
     targetContactSectionRef.current?.scrollIntoView({ behavior: "smooth" });
 
@@ -42,11 +45,13 @@ export default function App() {
               targetProjectSectionRef={targetProjectSectionRef}
               targetAboutSectionRef={targetAboutSectionRef}
               targetSkillSectionRef={targetSkillSectionRef}
+              targetServiceSectionRef={targetServiceSectionRef}
               targetContactSectionRef={targetContactSectionRef}
               scrollToHeroSection={scrollToHeroSection}
               scrollToProjectSection={scrollToProjectSection}
               scrollToAboutSection={scrollToAboutSection}
               scrollToSkillSection={scrollToSkillSection}
+              scrollToServiceSection={scrollToServiceSection}
               scrollToContactSection={scrollToContactSection}
             />
           }
@@ -55,7 +60,11 @@ export default function App() {
         {/* Separate Sub-Pages for specific architectural branches */}
         <Route path="/projects/:category" element={<EachProjects />} />
       </Routes>
-    <Footer scrollToHeroSection={scrollToHeroSection} scrollToAboutSection={scrollToAboutSection} scrollToProjectSection={scrollToProjectSection}/>
+      <Footer
+        scrollToHeroSection={scrollToHeroSection}
+        scrollToAboutSection={scrollToAboutSection}
+        scrollToProjectSection={scrollToProjectSection}
+      />
     </>
   );
 }
