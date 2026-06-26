@@ -353,55 +353,6 @@ section {
   100% { transform: translateX(-50%); }
 }
 
-/* ===== CONTACT ===== */
-.contact-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding-top: 10px;
-}
-
-.contact-card {
-  text-align: center;
-  padding: 30px 20px;
-  background: var(--color-section-bg);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-}
-
-.contact-card i {
-  font-size: 2rem;
-  color: var(--color-accent);
-  margin-bottom: 14px;
-}
-
-.contact-card h4 {
-  font-weight: 700;
-  color: #173b6c;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-  font-family: var(--font-display);
-}
-
-.contact-card p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: #040b14;
-  color: #a8a9b4;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.85rem;
-}
-
-footer span {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .nav-menu {
@@ -459,10 +410,6 @@ footer span {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-info {
     grid-template-columns: 1fr;
   }
 

@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import EachProjects from "./pages/EachProjects/EachProjects";
 import "./index.css";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -54,6 +55,7 @@ export default function App() {
         {/* Separate Sub-Pages for specific architectural branches */}
         <Route path="/projects/:category" element={<EachProjects />} />
       </Routes>
+      <Footer />
     </>
   );
 }

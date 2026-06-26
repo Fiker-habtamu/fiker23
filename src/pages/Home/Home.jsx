@@ -4,11 +4,10 @@ import Hero from "../../components/Hero";
 import Featured from "../../components/FeaturedSection/Featured";
 import About from "../../components/About";
 import Skills from "../../components/Skills";
-import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Service from "../../components/ServiceSection/Service";
+import Contact from "../../components/Contact/Contact";
 
 export default function Home({
   activeSection,
@@ -65,7 +64,6 @@ export default function Home({
         <Service/>
         <Contact targetContactSectionRef={targetContactSectionRef} />
       </main>
-      <Footer />
     </>
   );
 }

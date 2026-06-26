@@ -1,0 +1,281 @@
+ .cnt-section {
+          position: relative;
+          background-color: #040B14;
+          min-height: 100vh;
+          padding: 120px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        /* Ambient Glow Vector Background */
+        .cnt-glow-ambient {
+          position: absolute;
+          width: 700px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(20, 157, 221, 0.08) 0%, transparent 65%);
+          top: -10%;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        /* Subtle Large Structural Backdrop Typography */
+        .cnt-backdrop-text {
+          position: absolute;
+          top: 8%;
+          left: 50%;
+          transform: translateX(-50%);
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: clamp(4rem, 16vw, 13rem);
+          font-weight: 900;
+          color: rgba(255, 255, 255, 0.03);
+          letter-spacing: 8px;
+          user-select: none;
+          z-index: 1;
+        }
+
+        .cnt-grid-container {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          max-width: 1140px;
+          display: grid;
+          grid-template-columns: 1fr 1.1fr;
+          gap: 60px;
+          align-items: flex-start;
+          
+          /* Master scroll entrance base alignment */
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Animation Activation State */
+        .cnt-grid-container.cnt-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* LEFT PANE STRUCTURAL BLOCKS */
+        .cnt-left-pane {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .cnt-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(20, 157, 221, 0.06);
+          border: 1px solid rgba(20, 157, 221, 0.15);
+          padding: 6px 14px;
+          border-radius: 30px;
+          width: fit-content;
+          margin-bottom: 24px;
+        }
+
+        .cnt-badge span {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 13px;
+          color: #fff;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+        }
+
+        .cnt-title {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: clamp(2.5rem, 4vw, 3.5rem);
+          font-weight: 700;
+          color: #fff;
+          margin: 0 0 16px;
+          letter-spacing: -0.5px;
+        }
+
+        .cnt-subtitle {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.5);
+          line-height: 1.6;
+          margin: 0 0 40px;
+          max-width: 460px;
+        }
+
+        .cnt-info-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .cnt-info-card {
+          display: flex;
+          align-items: center;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 16px 20px;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: background 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+        .cnt-info-card:hover {
+          background: rgba(25, 33, 46, 0.4);
+          border-color: rgba(20, 157, 221, 0.3);
+          transform: translateX(4px);
+        }
+
+        .cnt-card-icon-box {
+          width: 44px;
+          height: 44px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 18px;
+        }
+
+        .cnt-card-details {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+        }
+
+        .cnt-card-label {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          color: #fff;
+          margin-bottom: 2px;
+        }
+
+        .cnt-card-value {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 13px;
+          color: rgba(255, 255, 255, 0.4);
+        }
+
+        .cnt-card-arrow {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.03);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.3s, transform 0.3s;
+        }
+
+        .cnt-info-card:hover .cnt-card-arrow {
+          background: rgba(20, 157, 221, 0.15);
+          transform: rotate(45deg);
+        }
+
+        .cnt-info-card:hover .cnt-card-arrow svg {
+          stroke: #149ddd;
+        }
+
+        /* RIGHT PANE FORM BLOCKS */
+        .cnt-right-pane {
+          width: 100%;
+        }
+
+        .cnt-form-box {
+          background: rgba(255, 255, 255, 0.01);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(12px);
+          padding: 40px;
+          border-radius: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 28px;
+        }
+
+        /* Floating Label Logic Structure */
+        .cnt-input-group {
+          position: relative;
+          width: 100%;
+        }
+
+        .cnt-form-input {
+          width: 100%;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          padding: 18px 16px;
+          border-radius: 10px;
+          color: #fff;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 15px;
+          outline: none;
+          transition: border-color 0.3s, background 0.3s;
+        }
+
+        .cnt-form-textarea {
+          resize: none;
+        }
+
+        .cnt-form-input:focus {
+          border-color: rgba(20, 157, 221, 0.5);
+          background: rgba(20, 157, 221, 0.02);
+        }
+
+        .cnt-form-label {
+          position: absolute;
+          left: 16px;
+          top: 18px;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.4);
+          pointer-events: none;
+          transition: transform 0.3s, font-size 0.3s, color 0.3s;
+        }
+
+        /* Move label out of input box when typing or focused */
+        .cnt-form-input:focus ~ .cnt-form-label,
+        .cnt-form-input:not(:placeholder-shown) ~ .cnt-form-label {
+          transform: translateY(-28px) translateX(-4px);
+          font-size: 12px;
+          color: #149ddd;
+        }
+
+        .cnt-submit-btn {
+          width: 100%;
+          background: #fff;
+          color: #040B14;
+          border: none;
+          padding: 16px 0;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 15px;
+          font-weight: 600;
+          border-radius: 30px;
+          cursor: pointer;
+          transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+          text-align: center;
+        }
+
+        .cnt-submit-btn:hover {
+          background: #e6e6e6;
+          box-shadow: 0 8px 25px rgba(20, 157, 221, 0.2);
+        }
+
+        .cnt-submit-btn:active {
+          transform: scale(0.98);
+        }
+
+        /* RESPONSIVE DESIGN VIEWPORTS */
+        @media (max-width: 992px) {
+          .cnt-grid-container {
+            grid-template-columns: 1fr;
+            gap: 50px;
+          }
+          .cnt-subtitle { max-width: 100%; }
+        }
+
+        @media (max-width: 576px) {
+          .cnt-section { padding: 80px 16px; }
+          .cnt-form-box { padding: 24px; gap: 24px; }
+          .cnt-backdrop-text { top: 4%; }
+        }
