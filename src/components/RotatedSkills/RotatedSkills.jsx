@@ -1,16 +1,17 @@
 import './RotatedSkills.css'
-import img1 from "/projects/portfolio/src/assets/img/Skills/html.png";
-import img2 from "/projects/portfolio/src/assets/img/Skills/images.png";
-import img3 from "/projects/portfolio/src/assets/img/Skills/js.png";
-import img4 from "/projects/portfolio/src/assets/img/Skills/jquery.png";
-import img5 from "/projects/portfolio/src/assets/img/Skills/react.png";
-import img6 from "/projects/portfolio/src/assets/img/Skills/teamwork.png";
-import img7 from "/projects/portfolio/src/assets/img/Skills/nodejs-logo.svg";
-import img8 from "/projects/portfolio/src/assets/img/Skills/express.png";
-import img9 from "/projects/portfolio/src/assets/img/Skills/api.png";
-import img10 from "/projects/portfolio/src/assets/img/Skills/sql.png";
-import img_11 from "/projects/portfolio/src/assets/img/Skills/git.webp";
-import img_12 from "/projects/portfolio/src/assets/img/Skills/bootstrap.jpg";
+// Clean relative paths going back two levels to reach src/assets
+import img1 from "../../assets/img/Skills/html.png";
+import img2 from "../../assets/img/Skills/images.png";
+import img3 from "../../assets/img/Skills/js.png";
+import img4 from "../../assets/img/Skills/jquery.png";
+import img5 from "../../assets/img/Skills/react.png";
+import img6 from "../../assets/img/Skills/teamwork.png";
+import img7 from "../../assets/img/Skills/nodejs-logo.svg";
+import img8 from "../../assets/img/Skills/express.png";
+import img9 from "../../assets/img/Skills/api.png";
+import img10 from "../../assets/img/Skills/sql.png";
+import img_11 from "../../assets/img/Skills/git.webp";
+import img_12 from "../../assets/img/Skills/bootstrap.jpg";
 
 import { useState } from "react";
 
