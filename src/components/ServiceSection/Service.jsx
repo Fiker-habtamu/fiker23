@@ -2,23 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import './Service.css'
 import { NINE_SERVICES } from "../../data/dataSet";
 
-// const NINE_SERVICES = [
-//   // --- SET 1 ---
-//   { id: "01", title: "Web Development", desc: "Crafting highly responsive, pixel-perfect frontend architectures using modern web standards." },
-//   { id: "02", title: "Full-Stack Applications", desc: "Engineering scalable web apps from secure database design to intuitive user interfaces." },
-//   { id: "03", title: "UI/UX Implementation", desc: "Translating sophisticated designer prototypes into living interactive web experiences." },
-  
-//   // --- SET 2 ---
-//   { id: "04", title: "API Integration & Design", desc: "Building clean, optimized RESTful or GraphQL communication pipelines and secure web services." },
-//   { id: "05", title: "Performance Optimization", desc: "Auditing application load lifecycles to reduce bundle sizes and achieve instant render speeds." },
-//   { id: "06", title: "Database Architecture", desc: "Designing high-throughput relational and non-relational storage layers with optimized query patterns." },
-  
-//   // --- SET 3 ---
-//   { id: "07", title: "Cloud Deployment & DevOps", desc: "Automating application workflows, setting up CI/CD pipelines, and launching secure cloud instances." },
-//   { id: "08", title: "E-Commerce Architecture", desc: "Constructing robust shopping engines with secure payment gateways, cart states, and stock tracking." },
-//   { id: "09", title: "Custom Software Solutions", desc: "Developing tailored algorithmic scripts and custom automation tools built for specific business requirements." }
-// ];
-
 // Aesthetic atmospheric background transitions for each set
 const BACKGROUND_SETS = [
   "#040B14", // Set 1: Your original iconic deep dark blue
@@ -110,10 +93,6 @@ export default function Services({ targetServiceSectionRef }) {
           </div>
         </div>
       </section>
-
-      <style>{`
-      
-      `}</style>
     </div>
   );
 }

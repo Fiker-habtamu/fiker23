@@ -252,9 +252,9 @@ const NINE_SERVICES = [
   { id: "03", title: "UI/UX Implementation", desc: "Translating sophisticated designer prototypes into living interactive web experiences." },
   
   // --- SET 2 ---
-  { id: "04", title: "API Integration & Design", desc: "Building clean, optimized RESTful or GraphQL communication pipelines and secure web services." },
+  { id: "04", title: "API Integration & Design", desc: "Building clean, optimized RESTful communication pipelines and secure web services." },
   { id: "05", title: "Performance Optimization", desc: "Auditing application load lifecycles to reduce bundle sizes and achieve instant render speeds." },
-  { id: "06", title: "Database Architecture", desc: "Designing high-throughput relational and non-relational storage layers with optimized query patterns." },
+  { id: "06", title: "landing page", desc: "Building a web page for a specific marketing or advertising campaign." },
   
   // --- SET 3 ---
   { id: "07", title: "📱 Responsive Design", desc: "Ensure websites work seamlessly across desktops, tablets, and mobile devices." },
