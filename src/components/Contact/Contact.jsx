@@ -4,13 +4,12 @@ import useReveal from "../../hooks/useReveal";
 
 
 export default function Contact({ targetContactSectionRef }) {
-  const web3Api = import.meta.env.WEB3FORM;
-
+  const web3Api = import.meta.env.WEB3FORM; 
   const [isIntersecting, setIsIntersecting] = useState(false);
   const sectionRef = useRef(null);
   const { ref: revealRef, isVisible } = useReveal(0.3);
-  const [result, setResult] = useState("");
-
+  const [result, setResult] = useState(""); 
+ 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
