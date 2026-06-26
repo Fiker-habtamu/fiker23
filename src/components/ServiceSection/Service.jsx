@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import './Service.css'
 import { NINE_SERVICES } from "../../data/dataSet";
+import useReveal from "../../hooks/useReveal";
 
 // Aesthetic atmospheric background transitions for each set
 const BACKGROUND_SETS = [
@@ -19,6 +20,7 @@ const GLOW_POSITIONS = [
 export default function Services({ targetServiceSectionRef }) {
   const scrollTrackRef = useRef(null);
   const [activeSet, setActiveSet] = useState(0);
+  const { ref: revealRef, isVisible } = useReveal(0.1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,7 +74,11 @@ export default function Services({ targetServiceSectionRef }) {
           </header>
 
           {/* The Service Triad Array Wrapper */}
-          <div className="srv-triad-display">
+          <div className={`srv-triad-display transition-all duration-1000 ${
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-x-10"
+          }`} ref={revealRef}>
             {currentServices.map((srv) => (
               <div key={srv.id} className="srv-vector-node">
                 <div className="srv-node-icon-wrapper">

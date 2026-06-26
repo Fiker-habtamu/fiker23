@@ -1,21 +1,6 @@
-// const skillsLeft = [
-//   { label: "HTML", icon: "fab fa-html5" },
-//   { label: "CSS", icon: "fab fa-css3-alt" },
-//   { label: "JavaScript", icon: "fab fa-js" },
-//   { label: "API Integration", icon: null },
-//   { label: "MySQL & MongoDB", icon: null },
-// ];
-
 import { skillsLeft, skillsRight } from "../data/dataSet";
+import useReveal from "../hooks/useReveal";
 import RotatedSkills from "./RotatedSkills/RotatedSkills";
-
-// const skillsRight = [
-//   { label: "Bootstrap", icon: "fab fa-bootstrap" },
-//   { label: "React", icon: "fab fa-react" },
-//   { label: "UX/UI Design", icon: null },
-//   { label: "Node.js & Express.js", icon: "fab fa-node" },
-//   { label: "Teamwork", icon: null },
-// ];
 
 function SkillBar({ label, icon }) {
   return (
@@ -31,20 +16,31 @@ function SkillBar({ label, icon }) {
   );
 }
 
-export default function Skills({targetSkillSectionRef}) {
+export default function Skills({ targetSkillSectionRef }) {
+  const { ref: revealRef, isVisible } = useReveal(0.1);
+
   return (
-    <section id="skills" className="skills section-bg" ref={targetSkillSectionRef}>
+    <section
+      id="skills"
+      className="skills section-bg"
+      ref={targetSkillSectionRef}
+    >
       <div className="container">
         <div className="section-title">
           <h2 className="text-[41px]">Skills</h2>
           <p>
             Proficient in HTML, CSS, and JavaScript for building responsive,
-            accessible web interfaces. Experienced with React, Bootstrap, Node.js,
-            Express.js, MySQL, and MongoDB to deliver full-stack solutions.
+            accessible web interfaces. Experienced with React, Bootstrap,
+            Node.js, Express.js, MySQL, and MongoDB to deliver full-stack
+            solutions.
           </p>
         </div>
 
-        <div className="skills-grid">
+        <div className={`skills-grid transition-all duration-1000 ${
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-x-10"
+          }`} ref={revealRef}>
           {skillsLeft.map((s) => (
             <SkillBar key={s.label} {...s} />
           ))}
@@ -55,18 +51,37 @@ export default function Skills({targetSkillSectionRef}) {
 
         {/* rotated skills */}
 
-        <RotatedSkills/>
+        <RotatedSkills />
 
         {/* Tech logo marquee */}
         <div className="skills-marquee">
           <div className="skills-track">
-            {["html.png", "images.png", "js.png", "jquery.png", "react.png",
-              "nodejs-logo.svg", "teamwork.png", "express.png", "api.png",
-              "sql.png", "git.webp", "bootstrap.jpg",
+            {[
+              "html.png",
+              "images.png",
+              "js.png",
+              "jquery.png",
+              "react.png",
+              "nodejs-logo.svg",
+              "teamwork.png",
+              "express.png",
+              "api.png",
+              "sql.png",
+              "git.webp",
+              "bootstrap.jpg",
               /* duplicate for seamless loop */
-              "html.png", "images.png", "js.png", "jquery.png", "react.png",
-              "nodejs-logo.svg", "teamwork.png", "express.png", "api.png",
-              "sql.png", "git.webp", "bootstrap.jpg",
+              "html.png",
+              "images.png",
+              "js.png",
+              "jquery.png",
+              "react.png",
+              "nodejs-logo.svg",
+              "teamwork.png",
+              "express.png",
+              "api.png",
+              "sql.png",
+              "git.webp",
+              "bootstrap.jpg",
             ].map((img, i) => (
               <img key={i} src={`/src/assets/img/Skills/${img}`} alt="" />
             ))}

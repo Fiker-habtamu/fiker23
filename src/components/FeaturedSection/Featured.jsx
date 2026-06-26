@@ -6,7 +6,7 @@ import { PROJECT_LINKS } from "../../data/dataSet";
 import useReveal from "../../hooks/useReveal";
 
 export default function Featured({ targetProjectSectionRef }) {
-  const { ref: revealRef, isVisible } = useReveal();
+  const { ref: revealRef, isVisible } = useReveal(0.1);
   const canvasRef = useRef(null);
   const rendererRef = useRef(null);
   const frameRef = useRef(null);
@@ -184,13 +184,6 @@ export default function Featured({ targetProjectSectionRef }) {
     <section
       id="project"
       ref={targetProjectSectionRef}
-      // ref={revealRef}
-      // ref={(element) => {
-      //   if (element) {
-      //     targetProjectSectionRef.current = element;
-      //     revealRef.current = element;
-      //   }
-      // }}
       className={`fp-section`}
     >
       <canvas ref={canvasRef} className="fp-canvas" />
