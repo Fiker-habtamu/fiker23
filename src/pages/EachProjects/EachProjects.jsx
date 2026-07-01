@@ -5,8 +5,8 @@ import './EachProjects.css'
 import {ALL_PROJECTS, CATEGORY_BADGE, CATEGORY_META} from "../../data/dataSet";
 
 // ─────────────────────────────────────
-//  ICONS
-// ──────────────────────────────────────
+// //  ICONS// 
+// ─────────────────────────────────────
 function IconGitHub() {
   return (
     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
