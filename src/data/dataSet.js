@@ -129,7 +129,7 @@ const ALL_PROJECTS = [
     image: amazonImg, // <-- Variable assigned
     stack: ["React ", "Node.js", "Express", "Firebase / Stripe API"],
     github: "https://github.com/Fiker-habtamu/Amazon-front-end",
-    live: "https://fkr-ecommerce-showcase.netlify.app/",
+    live: "https://fkr-amazon-clone.netlify.app/",
   },
   {
     id: 7,
