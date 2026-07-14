@@ -75,7 +75,7 @@ const ALL_PROJECTS = [
     category: "real",
     title: "Digital Professional Showcase",
     description:
-      "A robust academic management tool utilizing complex 2D array implementations and structures for automated student grading and metrics.",
+      "A modern developer portfolio showcasing responsive web applications through dynamic React routing, interactive animations, dark mode, and seamless email API integration.",
     image: portfolioImg, // <-- Variable assigned
     stack: [
       "Basic front-end: HTML,CSS JavaScript",
@@ -84,7 +84,7 @@ const ALL_PROJECTS = [
       "Tailwind",
     ],
     github: "https://github.com/Fiker-habtamu/fiker23",
-    live: "https://cruise-steps-protal-webapp.netlify.app/",
+    live: "https://fikerhab.vercel.app/",
   },
   {
     id: 3,
