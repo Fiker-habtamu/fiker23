@@ -69,7 +69,7 @@ export default function About({ targetAboutSectionRef }) {
           {/* Right Column — Achievements */}
           <div>
             <h3 className="text-3xl font-medium text-right">
-              Our <span className="text-[#149ddd]">Achievements</span>
+              My <span className="text-[#149ddd]">Achievements</span>
             </h3>
             <p className="text-sm text-gray-400 text-right mb-5">
               Numbers that reflect my journey
